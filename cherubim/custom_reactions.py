@@ -99,7 +99,7 @@ class CustomReactions(commands.Cog):
 
                 item = {
                     "name": name,
-                    "value": cr_value
+                    "value": embed
                 }
 
                 await ctx.send(f"Created reaction {name}, response:", embed=embed)
