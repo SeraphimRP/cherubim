@@ -175,4 +175,5 @@ class CustomReactions(commands.Cog):
             if message.content in names:
                 index = names.index(message.content)
 
-                await message.channel.send(embed=json_to_embed(custom_reactions[index]["value"]))
+                json_obj = json.loads(custom_reactions[index]["value"])
+                await message.channel.send(embed=json_to_embed(json_obj))
