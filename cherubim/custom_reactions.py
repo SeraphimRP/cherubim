@@ -99,7 +99,7 @@ class CustomReactions(commands.Cog):
 
                 item = {
                     "name": name,
-                    "value": embed
+                    "value": cr_value
                 }
 
                 await ctx.send(f"Created reaction {name}, response:", embed=embed)
@@ -134,7 +134,7 @@ class CustomReactions(commands.Cog):
 
                 item = {
                     "name": name,
-                    "value": embed
+                    "value": cr_value
                 }
 
                 await ctx.send(f"Edited reaction {name}, response:", embed=embed)
@@ -175,4 +175,4 @@ class CustomReactions(commands.Cog):
             if message.content in names:
                 index = names.index(message.content)
 
-                await message.channel.send(embed=custom_reactions[index]["value"])
+                await message.channel.send(embed=json_to_embed(custom_reactions[index]["value"]))
