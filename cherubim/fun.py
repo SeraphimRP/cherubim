@@ -11,15 +11,20 @@ class Fun(commands.Cog):
 
         if item:
             await ctx.send(f"{ctx.author.mention} dabs on {item}.", file=img)
+        else:
+            await ctx.send(f"{ctx.author.mention} dabs.", file=img)
 
     @commands.command()
-    async def slap(self, ctx, user: discord.Member=None, item: str=None):
+    async def slap(self, ctx, item: str=None):
         if item:
             await ctx.send(f"{ctx.author.mention} slaps {item} with a fish.")
+        else:
+            await ctx.send(f"{ctx.author.mention} didn't target anything and accidentally slapped themselves with a fish.")
+
 
     @commands.command()
     async def kill(self, ctx, item: str=None):
         if item:
             await ctx.send(f"{item} :gun:")
         else:
-            await ctx.send("I can't kill thin air!")
+            await ctx.send("How am I supposed to kill nothing?!")
