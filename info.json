@@ -1,0 +1,9 @@
+{
+    "AUTHOR" : "Seraphim (vypr#0001)",
+    "NAME" : "cherubim",
+    "SHORT" : "A full-stack cog for Cherubim.",
+    "DESCRIPTION" : "A full-stack cog for Cherubim.",
+    "TAGS" : ["cherubim", "custom"],
+    "REQUIREMENTS" : ["tabulate"],
+    "HIDDEN" : false
+}
