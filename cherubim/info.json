@@ -4,6 +4,6 @@
     "SHORT" : "A full-stack cog for Cherubim.",
     "DESCRIPTION" : "A full-stack cog for Cherubim.",
     "TAGS" : ["cherubim", "custom"],
-    "REQUIREMENTS" : ["tabulate"],
+    "REQUIREMENTS" : ["tabulate", "requests"],
     "HIDDEN" : false
 }
