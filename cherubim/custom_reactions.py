@@ -160,7 +160,7 @@ class CustomReactions(commands.Cog):
             existing_reaction = [x for x in custom_reactions if x["name"] == cr_name]
 
             if existing_reaction:
-                custom_reactions.delete(existing_reaction[0])
+                custom_reactions.remove(existing_reaction[0])
                 await ctx.send(f"Deleted `{cr_name}`.")
             else:
                 await ctx.send(f"I don't have a reaction named `{cr_name}`. Are you sure it exists?")
