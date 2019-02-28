@@ -123,10 +123,10 @@ class CustomReactions(commands.Cog):
             sent = False
             item = None
 
-            existing_reaction = [x for x in custom_reactions if custom_reactions["name"] == cr_name]
+            existing_reaction = [x for x in custom_reactions if x["name"] == cr_name]
 
             if existing_reaction:
-                custom_reactions.delete(existing_reaction[0])
+                custom_reactions.remove(existing_reaction[0])
 
             try:
                 name = cr_name
