@@ -164,3 +164,15 @@ class CustomReactions(commands.Cog):
                 await ctx.send(f"Deleted `{cr_name}`.")
             else:
                 await ctx.send(f"I don't have a reaction named `{cr_name}`. Are you sure it exists?")
+
+    
+    async def on_message(self, message):
+        group = self.config.guild(message.guild)
+
+        async with group.custom_reactions() as custom_reactions:
+            names = [x["name"] for x in custom_reactions]
+
+            if message.content in names:
+                index = names.index(message.content)
+
+                message.channel.send(embed=custom_reactions[index]["value"])
