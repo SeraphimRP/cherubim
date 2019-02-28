@@ -157,7 +157,7 @@ class CustomReactions(commands.Cog):
             sent = False
             item = None
 
-            existing_reaction = [x for x in custom_reactions if custom_reactions["name"] == cr_name]
+            existing_reaction = [x for x in custom_reactions if x["name"] == cr_name]
 
             if existing_reaction:
                 custom_reactions.delete(existing_reaction[0])
@@ -175,4 +175,4 @@ class CustomReactions(commands.Cog):
             if message.content in names:
                 index = names.index(message.content)
 
-                message.channel.send(embed=custom_reactions[index]["value"])
+                await message.channel.send(embed=custom_reactions[index]["value"])
