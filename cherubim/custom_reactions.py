@@ -167,13 +167,16 @@ class CustomReactions(commands.Cog):
 
     
     async def on_message(self, message):
-        group = self.config.guild(message.guild)
+        try:
+            group = self.config.guild(message.guild)
 
-        async with group.custom_reactions() as custom_reactions:
-            names = [x["name"] for x in custom_reactions]
+            async with group.custom_reactions() as custom_reactions:
+                names = [x["name"] for x in custom_reactions]
 
-            if message.content in names:
-                index = names.index(message.content)
+                if message.content in names:
+                    index = names.index(message.content)
 
-                json_obj = json.loads(custom_reactions[index]["value"])
-                await message.channel.send(embed=json_to_embed(json_obj))
+                    json_obj = json.loads(custom_reactions[index]["value"])
+                    await message.channel.send(embed=json_to_embed(json_obj))
+        except Exception:
+            pass
