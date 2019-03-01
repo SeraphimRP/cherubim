@@ -7,6 +7,10 @@ from .fun import Fun
 from .announce import Announce
 from .restrict import Restrict
 
+from .msgvote import MsgVote
+from .reactpoll import ReactPoll
+from .errorlogs import ErrorLogs
+
 def setup(bot):
     bot.add_cog(AutoPrayer(bot))
     bot.add_cog(SuggestionBox(bot))
@@ -16,3 +20,7 @@ def setup(bot):
 
     bot.add_cog(Announce(bot))
     bot.add_cog(Restrict(bot))
+    
+    bot.add_cog(MsgVote(bot))
+    bot.add_cog(ReactPoll(bot))
+    bot.add_cog(ErrorLogs())
