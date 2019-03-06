@@ -2,7 +2,6 @@ import asyncio
 from typing import List, Union
 
 import discord
-from discord.ext import commands as ext_commands
 
 from redbot.core import Config, checks, commands
 from redbot.core.bot import Red
@@ -182,7 +181,7 @@ class ReactRole(commands.Cog):
 
         return role
 
-    async def _get_message(self, ctx: ext_commands.Context, message_id: int)\
+    async def _get_message(self, ctx: commands.Context, message_id: int)\
             -> Union[discord.Message, None]:
         """
         Tries to find a message by ID in the current guild context.
@@ -201,7 +200,7 @@ class ReactRole(commands.Cog):
 
         return None
 
-    async def _wait_for_emoji(self, ctx: ext_commands.Context):
+    async def _wait_for_emoji(self, ctx: commands.Context):
         """
         Asks the user to react to this message and returns the emoji string if unicode
         or ID if custom.
@@ -229,9 +228,9 @@ class ReactRole(commands.Cog):
 
         return ret, reaction.emoji
 
-    @ext_commands.group()
+    @commands.group()
     @checks.guildowner_or_permissions(manage_roles=True)
-    async def reactrole(self, ctx: ext_commands.Context):
+    async def reactrole(self, ctx: commands.Context):
         """
         Base command for this cog. Check help for the commands list.
         """
@@ -239,7 +238,7 @@ class ReactRole(commands.Cog):
             await ctx.send_help()
 
     @reactrole.command()
-    async def add(self, ctx: ext_commands.Context, message_id: int, *, role: discord.Role):
+    async def add(self, ctx: commands.Context, message_id: int, *, role: discord.Role):
         """
         Adds a reaction|role combination to a registered message, don't use
         quotes for the role name.
@@ -268,7 +267,7 @@ class ReactRole(commands.Cog):
         await ctx.send("React|Role combo added.")
 
     @reactrole.command()
-    async def remove(self, ctx: ext_commands.Context, message_id: int):
+    async def remove(self, ctx: commands.Context, message_id: int):
         """
         Removes all roles associated with a given reaction.
         """
