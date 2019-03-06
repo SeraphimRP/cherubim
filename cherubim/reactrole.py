@@ -41,7 +41,7 @@ class ReactRoleCombo:
         )
 
 
-class ReactRole:
+class ReactRole(commands.Cog):
     """
     This cog enables role assignment/removal based on reactions to specific
     messages.
