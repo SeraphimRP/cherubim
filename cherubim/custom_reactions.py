@@ -50,7 +50,7 @@ def json_to_embed(data):
             embed.set_image(url=data["image"])
 
         if "thumbnail" in data.keys():
-            embed.set_image(url=data["thumbnail"])
+            embed.set_thumbnail(url=data["thumbnail"])
 
         if "fields" in data.keys():
             for field in data["fields"]:
