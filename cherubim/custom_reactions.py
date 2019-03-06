@@ -87,13 +87,13 @@ class CustomReactions(commands.Cog):
     @checks.admin_or_permissions(manage_guild=True)
     async def acr(self, ctx, cr_name: str, *, cr_value: str):
         group = self.config.guild(ctx.guild)
-        json_obj = json.loads(cr_value)
 
         async with group.custom_reactions() as custom_reactions:
             sent = False
             item = None
 
             try:
+                json_obj = json.loads(cr_value)
                 name = cr_name
                 embed = json_to_embed(json_obj)
 
@@ -117,7 +117,6 @@ class CustomReactions(commands.Cog):
     @checks.admin_or_permissions(manage_guild=True)
     async def ecr(self, ctx, cr_name: str, *, cr_value: str):
         group = self.config.guild(ctx.guild)
-        json_obj = json.loads(cr_value)
 
         async with group.custom_reactions() as custom_reactions:
             sent = False
@@ -129,6 +128,7 @@ class CustomReactions(commands.Cog):
                 custom_reactions.remove(existing_reaction[0])
 
             try:
+                json_obj = json.loads(cr_value)
                 name = cr_name
                 embed = json_to_embed(json_obj)
 
