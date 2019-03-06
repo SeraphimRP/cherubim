@@ -11,6 +11,8 @@ from .msgvote import MsgVote
 from .reactpoll import ReactPoll
 from .errorlogs import ErrorLogs
 
+from .reactrole import ReactRole
+
 def setup(bot):
     bot.add_cog(AutoPrayer(bot))
     bot.add_cog(SuggestionBox(bot))
@@ -24,3 +26,5 @@ def setup(bot):
     bot.add_cog(MsgVote(bot))
     bot.add_cog(ReactPoll(bot))
     bot.add_cog(ErrorLogs())
+
+    bot.add_cog(ReactRole(bot))
