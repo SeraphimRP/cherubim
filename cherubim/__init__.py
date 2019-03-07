@@ -3,6 +3,7 @@ from .suggestionbox import SuggestionBox
 from .custom_reactions import CustomReactions
 
 from .fun import Fun
+from .standards import Standards
 
 from .announce import Announce
 from .restrict import Restrict
@@ -19,6 +20,7 @@ def setup(bot):
     bot.add_cog(CustomReactions())
 
     bot.add_cog(Fun())
+    bot.add_cog(Standards(bot))
 
     bot.add_cog(Announce(bot))
     bot.add_cog(Restrict(bot))
