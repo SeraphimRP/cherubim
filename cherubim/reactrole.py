@@ -292,7 +292,11 @@ class ReactRole(commands.Cog):
         :param int user_id:
         :return:
         """
-        message_id, user_id, channel_id, emoji = payload
+        message_id = payload.message_id if payload.message_id else None
+        channel_id = payload.channel_id if payload.channel_id else None
+        user_id = payload.user_id if payload.user_id else None
+        emoji = payload.emoji if payload.emoji else None
+
 
         if emoji.is_custom_emoji():
             emoji_id = emoji.id
@@ -332,7 +336,10 @@ class ReactRole(commands.Cog):
         :param int user_id:
         :return:
         """
-        message_id, user_id, channel_id, emoji = payload
+        message_id = payload.message_id if payload.message_id else None
+        channel_id = payload.channel_id if payload.channel_id else None
+        user_id = payload.user_id if payload.user_id else None
+        emoji = payload.emoji if payload.emoji else None
 
         if emoji.is_custom_emoji():
             emoji_id = emoji.id
