@@ -282,8 +282,7 @@ class ReactRole(commands.Cog):
 
         await ctx.send("Reaction removed.")
 
-    async def on_raw_reaction_add(self, emoji: discord.PartialEmoji,
-                                  message_id: int, channel_id: int, user_id: int):
+    async def on_raw_reaction_add(self, message_id: int, user_id: int, channel_id: int, emoji: discord.PartialEmoji):
         """
         Event handler for long term reaction watching.
 
