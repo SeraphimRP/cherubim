@@ -282,7 +282,7 @@ class ReactRole(commands.Cog):
 
         await ctx.send("Reaction removed.")
 
-    async def on_raw_reaction_add(self, message_id, user_id, channel_id, emoji):
+    async def on_raw_reaction_add(self, payload):
         """
         Event handler for long term reaction watching.
 
@@ -292,6 +292,8 @@ class ReactRole(commands.Cog):
         :param int user_id:
         :return:
         """
+        message_id, user_id, channel_id, emoji = payload
+
         if emoji.is_custom_emoji():
             emoji_id = emoji.id
         else:
@@ -320,7 +322,7 @@ class ReactRole(commands.Cog):
         except discord.Forbidden:
             pass
 
-    async def on_raw_reaction_remove(self, message_id, user_id, channel_id, emoji):
+    async def on_raw_reaction_remove(self, payload):
         """
         Event handler for long term reaction watching.
 
@@ -330,6 +332,8 @@ class ReactRole(commands.Cog):
         :param int user_id:
         :return:
         """
+        message_id, user_id, channel_id, emoji = payload
+
         if emoji.is_custom_emoji():
             emoji_id = emoji.id
         else:
