@@ -321,8 +321,7 @@ class ReactRole(commands.Cog):
         except discord.Forbidden:
             pass
 
-    async def on_raw_reaction_remove(self, emoji: discord.PartialEmoji,
-                                     message_id: int, channel_id: int, user_id: int):
+    async def on_raw_reaction_remove(self, message_id: int, user_id: int, channel_id: int, emoji: discord.PartialEmoji:
         """
         Event handler for long term reaction watching.
 
