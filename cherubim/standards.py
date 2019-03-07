@@ -16,9 +16,9 @@ class Standards(commands.Cog):
         staff_channel = self.bot.get_channel(538837260229935124)
         await staff_channel.send(f"{member.mention} has joined.")
 
-        asyncio.sleep(30)
+        await asyncio.sleep(30)
 
-        msg.delete()
+        await msg.delete()
 
     async def on_member_remove(self, member):
         staff_channel = self.bot.get_channel(538837260229935124)
